@@ -1,5 +1,5 @@
 <template>
-    <section class="benefits-section" ref="sectionRef">
+    <section class="benefits-section" ref="sectionRef" id="beneficios">
         <div class="benefits-container">
             <!-- Header -->
             <div class="benefits-header" :class="{ 'benefits-header--visible': isVisible }">

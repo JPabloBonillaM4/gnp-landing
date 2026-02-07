@@ -1,5 +1,5 @@
 <template>
-    <section class="plans-section">
+    <section class="plans-section" id="coberturas">
         <div class="plans-container">
             <!-- Section Header -->
             <div class="plans-header">

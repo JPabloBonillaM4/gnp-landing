@@ -25,6 +25,12 @@
             <plans-home></plans-home>
             {{-- Benefits home --}}
             <benefits-home></benefits-home>
+            {{-- Opinions --}}
+            <opinions-home></opinions-home>
+            {{-- Certifications --}}
+            <certifications-home></certifications-home>
+            {{-- Footer --}}
+            <footer-component></footer-component>
             {{-- Whatssapp --}}
             <whatsapp-contact></whatsapp-contact>
         </div>

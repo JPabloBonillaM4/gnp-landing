@@ -1,10 +1,20 @@
 <template>
     <section class="hero-section">
         <div class="hero-container">
+            <!-- Badge Mobile (visible only on mobile, before form) -->
+            <div class="badge-mobile fs-20px">
+                <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Cotiza hoy y obtén cobertura inmediata
+            </div>
+
             <!-- Left Content -->
-            <ContentLeft />
+            <ContentLeft class="content-left-wrapper" />
+
             <!-- Right Form -->
-            <FormRight />
+            <FormRight class="form-right-wrapper" />
         </div>
     </section>
 </template>
@@ -60,6 +70,43 @@ import FormRight from './components/form-right/index.vue';
     z-index: 1;
 }
 
+/* Badge Mobile */
+.badge-mobile {
+    display: none;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    color: #ffffff;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 auto;
+    gap: 0.5rem;
+    align-items: center;
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    font-size: 0.85rem !important;
+    width: 100%;
+    justify-content: center !important;
+}
+
+.badge__icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .hero-section {
@@ -80,6 +127,19 @@ import FormRight from './components/form-right/index.vue';
     .hero-container {
         flex-direction: column;
         gap: 2.5rem;
+    }
+    
+    .badge-mobile {
+        display: flex;
+        order: 1;
+    }
+    
+    .form-right-wrapper {
+        order: 2;
+    }
+    
+    .content-left-wrapper {
+        order: 3;
     }
 }
 

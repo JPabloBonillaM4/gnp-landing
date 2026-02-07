@@ -266,8 +266,7 @@ onUnmounted(() => {
     }
 
     .badge {
-        font-size: 0.85rem;
-        padding: 0.5rem 1rem;
+        display: none;
     }
 
     .main-title {

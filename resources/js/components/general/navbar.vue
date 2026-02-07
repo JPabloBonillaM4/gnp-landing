@@ -3,19 +3,19 @@
         <!-- Logo Section -->
         <div class="navbar__logo">
             <a href="/">
-                <img src="/images/logo-gnp.png" alt="GNP Seguros" class="navbar__logo-img" />
+                <img src="/img/logo.png" alt="GNP Seguros" class="navbar__logo-img" />
             </a>
         </div>
 
         <!-- Navigation Links (Desktop) -->
         <div class="navbar__links">
-            <a href="#coberturas" class="navbar__link">Coberturas</a>
-            <a href="#beneficios" class="navbar__link">Beneficios</a>
-            <a href="#como-elegir" class="navbar__link">Cómo elegir</a>
+            <a href="#coberturas" class="navbar__link" @click.prevent="scrollToSection('coberturas')">Coberturas</a>
+            <a href="#beneficios" class="navbar__link" @click.prevent="scrollToSection('beneficios')">Beneficios</a>
+            <a href="#como-elegir" class="navbar__link" @click.prevent="scrollToSection('como-elegir')">Cómo elegir</a>
         </div>
 
         <!-- CTA Button (Desktop) -->
-        <a href="#cotizar" class="navbar__cta navbar__cta--desktop">
+        <a href="#cotizar" class="navbar__cta navbar__cta--desktop" @click.prevent="scrollToSection('cotizar')">
             Cotizar ahora
         </a>
 
@@ -47,21 +47,21 @@
                     <a
                         href="#coberturas"
                         class="navbar__mobile-link"
-                        @click="closeMobileMenu"
+                        @click.prevent="scrollToSection('coberturas')"
                     >
                         Coberturas
                     </a>
                     <a
                         href="#beneficios"
                         class="navbar__mobile-link"
-                        @click="closeMobileMenu"
+                        @click.prevent="scrollToSection('beneficios')"
                     >
                         Beneficios
                     </a>
                     <a
                         href="#como-elegir"
                         class="navbar__mobile-link"
-                        @click="closeMobileMenu"
+                        @click.prevent="scrollToSection('como-elegir')"
                     >
                         Cómo elegir
                     </a>
@@ -69,7 +69,7 @@
                 <a
                     href="#cotizar"
                     class="navbar__cta navbar__cta--mobile"
-                    @click="closeMobileMenu"
+                    @click.prevent="scrollToSection('cotizar')"
                 >
                     Cotizar ahora
                 </a>
@@ -96,6 +96,29 @@ const closeMobileMenu = () => {
     document.body.style.overflow = '';
 };
 
+const scrollToSection = (sectionId) => {
+    // Close mobile menu if open
+    if (isMobileMenuOpen.value) {
+        closeMobileMenu();
+    }
+
+    // Find the section element
+    const element = document.getElementById(sectionId);
+    
+    if (element) {
+        // Calculate offset for fixed navbar (70px height)
+        const navbarHeight = 70;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navbarHeight;
+
+        // Smooth scroll to section
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+};
+
 const handleResize = () => {
     if (window.innerWidth > 768 && isMobileMenuOpen.value) {
         closeMobileMenu();
@@ -120,6 +143,11 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+/* Ensure smooth scrolling globally */
+:global(html) {
+    scroll-behavior: smooth;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -154,9 +182,9 @@ onUnmounted(() => {
 }
 
 .navbar__logo-img {
-    height: 40px;
+    height: 80px;
     width: auto;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 /* Navigation Links (Desktop) */
@@ -395,7 +423,18 @@ onUnmounted(() => {
 /* Mobile (< 768px) */
 @media (max-width: 768px) {
     .navbar {
-        padding-left: 1.5rem;
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    .navbar__logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .navbar__logo-img {
+        height: 100px;
     }
 
     .navbar__links {
@@ -408,18 +447,18 @@ onUnmounted(() => {
 
     .navbar__hamburger {
         display: flex;
+        margin-left: auto;
     }
 }
 
 /* Small Mobile (< 480px) */
 @media (max-width: 480px) {
     .navbar {
-        padding-left: 1rem;
         height: 60px;
     }
 
     .navbar__logo-img {
-        height: 32px;
+        height: 40px;
     }
 
     .navbar__hamburger {

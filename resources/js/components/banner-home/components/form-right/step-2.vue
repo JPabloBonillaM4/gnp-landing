@@ -1,8 +1,7 @@
 <template>
     <form class="step-form" @submit.prevent="handleSubmit">
-        Info pendiente
         <!-- Edad -->
-        <!-- <div class="form-group">
+        <div class="form-group">
             <label class="form-label" for="edad">Edad</label>
             <input
                 id="edad"
@@ -15,10 +14,10 @@
                 @input="$emit('update', 'edad', $event.target.value)"
                 required
             />
-        </div> -->
+        </div>
 
         <!-- Código Postal -->
-        <!-- <div class="form-group">
+        <div class="form-group">
             <label class="form-label" for="codigoPostal">Código Postal</label>
             <input
                 id="codigoPostal"
@@ -30,32 +29,15 @@
                 @input="$emit('update', 'codigoPostal', $event.target.value)"
                 required
             />
-        </div> -->
-
-        <!-- Tipo de Seguro -->
-        <!-- <div class="form-group">
-            <label class="form-label" for="tipoSeguro">¿Qué tipo de seguro te interesa?</label>
-            <select
-                id="tipoSeguro"
-                class="form-input form-select"
-                :value="formData.tipoSeguro"
-                @change="$emit('update', 'tipoSeguro', $event.target.value)"
-                required
-            >
-                <option value="" disabled>Selecciona una opción</option>
-                <option value="individual">Individual</option>
-                <option value="familiar">Familiar</option>
-                <option value="empresarial">Empresarial</option>
-            </select>
-        </div> -->
+        </div>
 
         <!-- Buttons -->
         <div class="button-group">
             <button type="button" class="back-btn" @click="$emit('back')">
-                ← Regresar
+                ← Atrás
             </button>
             <button type="submit" class="submit-btn">
-                Enviar cotización
+                Quiero proteger a mi familia
             </button>
         </div>
     </form>

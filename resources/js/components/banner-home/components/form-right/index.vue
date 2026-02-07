@@ -1,8 +1,8 @@
 <template>
     <div class="form-container" :class="{ 'form-container--visible': isVisible }" ref="formRef">
-        <h2 class="form-title text-blue-primary">Obtén tu cotización gratuita</h2>
+        <h2 class="form-title text-blue-primary" v-if="!showSuccess">Obtén tu cotización gratuita</h2>
         <!-- Stepper Header -->
-        <div class="stepper">
+        <div class="stepper" v-if="!showSuccess">
             <p class="stepper__label fs-20px">
                 Paso {{ currentStep }} de 2: {{ currentStep === 1 ? 'Datos de contacto' : 'Información adicional' }}
             </p>
@@ -22,23 +22,31 @@
         <div class="form-steps">
             <Transition name="slide-fade" mode="out-in">
                 <Step1
-                    v-if="currentStep === 1"
+                    v-if="currentStep === 1 && !isLoading && !showSuccess"
                     :form-data="formData"
                     @update="updateFormData"
                     @next="nextStep"
                 />
                 <Step2
-                    v-else
+                    v-else-if="currentStep === 2 && !isLoading && !showSuccess"
                     :form-data="formData"
                     @update="updateFormData"
                     @back="prevStep"
                     @submit="submitForm"
                 />
+                <div v-else-if="isLoading" class="loader-container">
+                    <div class="loader"></div>
+                    <p class="loader-text">Procesando tu solicitud...</p>
+                </div>
+                <SuccessMsg
+                    v-else-if="showSuccess"
+                    :form-data="formData"
+                />
             </Transition>
         </div>
 
         <!-- Trust Badges -->
-        <div class="trust-badges">
+        <div class="trust-badges" v-if="!showSuccess">
             <p class="trust-badge">
                 <span class="trust-badge__icon">🔒</span>
                 Tu información está protegida.
@@ -55,10 +63,13 @@
 import { ref, reactive, onMounted, onUnmounted } from 'vue';
 import Step1 from './step-1.vue';
 import Step2 from './step-2.vue';
+import SuccessMsg from './success_msg.vue';
 
 const isVisible = ref(false);
 const currentStep = ref(1);
 const formRef = ref(null);
+const isLoading = ref(false);
+const showSuccess = ref(false);
 let observer = null;
 
 const formData = reactive({
@@ -67,7 +78,6 @@ const formData = reactive({
     email: '',
     edad: '',
     codigoPostal: '',
-    tipoSeguro: ''
 });
 
 const updateFormData = (field, value) => {
@@ -88,8 +98,12 @@ const prevStep = () => {
 
 const submitForm = () => {
     console.log('Form submitted:', formData);
-    // Aquí iría la lógica de envío del formulario
-    alert('¡Gracias! Nos pondremos en contacto contigo pronto.');
+    isLoading.value = true;
+    
+    setTimeout(() => {
+        isLoading.value = false;
+        showSuccess.value = true;
+    }, 2000);
 };
 
 onMounted(() => {
@@ -171,6 +185,42 @@ onUnmounted(() => {
 /* Form Steps Container */
 .form-steps {
     min-height: 280px;
+}
+
+/* Loader */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    gap: 1.5rem;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--orange-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader-text {
+    font-size: 1.125rem;
+    color: #666666;
+    font-weight: 500;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
 /* Trust Badges */
