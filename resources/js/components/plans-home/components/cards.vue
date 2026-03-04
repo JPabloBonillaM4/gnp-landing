@@ -163,7 +163,7 @@ onUnmounted(() => {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    margin-bottom: 4rem;
+    margin-top: 4rem;
     align-items: start;
 }
 

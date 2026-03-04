@@ -1,6 +1,6 @@
 <template>
     <div class="choose-plan" :class="{ 'choose-plan--visible': isVisible }" ref="sectionRef">
-        <h3 class="choose-plan__title">Elige el plan perfecto para ti</h3>
+        <!-- <h3 class="choose-plan__title">Elige el plan perfecto para ti</h3> -->
 
         <div class="choose-plan__card">
             <!-- User Info -->

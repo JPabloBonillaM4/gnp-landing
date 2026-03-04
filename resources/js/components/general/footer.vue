@@ -46,8 +46,8 @@
 
         <!-- Footer Bottom -->
         <div class="footer-bottom" data-aos="fade-up" data-aos-delay="400">
-            <p class="copyright">© 2026 Asiste Salud. Todos los derechos reservados</p>
-            <p class="registry">Operado por GNP Seguros</p>
+            <p class="copyright">© Todos los derechos reservados</p>
+            <p class="registry">Operado por Agente GNP</p>
         </div>
     </footer>
 </template>

@@ -5,13 +5,12 @@
             <label class="form-label" for="edad">Edad</label>
             <input
                 id="edad"
-                type="number"
+                type="text"
                 class="form-input"
                 placeholder="Ej. 35"
-                min="18"
-                max="99"
                 :value="formData.edad"
                 @input="$emit('update', 'edad', $event.target.value)"
+                maxlength="9"
                 required
             />
         </div>
@@ -24,7 +23,7 @@
                 type="text"
                 class="form-input"
                 placeholder="Ej. 06600"
-                maxlength="5"
+                maxlength="30"
                 :value="formData.codigoPostal"
                 @input="$emit('update', 'codigoPostal', $event.target.value)"
                 required

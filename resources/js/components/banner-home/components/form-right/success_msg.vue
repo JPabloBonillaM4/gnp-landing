@@ -1,6 +1,6 @@
 <template>
     <div class="success-message">
-        <h2 class="success-title">{{ formData.nombre.toUpperCase() }}</h2>
+        <h2 class="success-title">{{ fullName.toUpperCase() }}</h2>
 
         <p class="success-intro text-blue-primary">
             Gracias por cotizar tu seguro de <strong>Gastos Médicos</strong> con GNP.
@@ -11,9 +11,9 @@
         </p>
 
         <div class="content-section">
-            <div class="mb-3 text-blue-primary text-center">
+            <!-- <div class="mb-3 text-blue-primary text-center">
                 <p>Con una aportación mensual de <strong class="monthly-amount">$2,461.00</strong>, podrás protegerte ante una enfermedad o accidente:</p>
-            </div>
+            </div> -->
             <ul class="benefits-list text-blue-primary">
                 <li>Acceso a todos los hospitales de México, incluye los de alta tecnología como ABC y Ángeles</li>
                 <li>Honorarios Médicos</li>
@@ -30,9 +30,9 @@
             </ul>
         </div>
 
-        <p class="payment-info text-blue-primary">
+        <!-- <p class="payment-info text-blue-primary">
             Además, si pagas de contado, <strong class="discount-amount">$27,352.00</strong>, pueden hacerlo a 3, 6 y 12 meses sin intereses (Pregunta por nuestras tarjetas participantes)
-        </p>
+        </p> -->
 
         <div class="contact-section">
             <p class="contact-title">Deseo contratar:</p>
@@ -49,11 +49,17 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue';
+
+const props = defineProps({
     formData: {
         type: Object,
         required: true
     }
+});
+
+const fullName = computed(() => {
+    return `${props.formData.firstName || ''} ${props.formData.lastName || ''}`.trim();
 });
 </script>
 

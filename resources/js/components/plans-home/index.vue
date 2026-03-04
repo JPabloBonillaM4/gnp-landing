@@ -6,11 +6,11 @@
                 <h2 class="plans-title">Elige el plan perfecto para ti</h2>
             </div>
 
-            <!-- Cards Component -->
-            <Cards />
-
             <!-- Choose Plan Component -->
             <ChoosePlan />
+
+            <!-- Cards Component -->
+            <Cards />
         </div>
     </section>
 </template>
