@@ -1,5 +1,5 @@
 <template>
-    <section class="hero-section">
+    <section id="cotizar" class="hero-section">
         <div class="hero-container">
             <!-- Badge Mobile (visible only on mobile, before form) -->
             <div class="badge-mobile fs-20px">

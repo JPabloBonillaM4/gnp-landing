@@ -54,6 +54,7 @@
                 <button
                     class="plan-card__cta"
                     :class="`plan-card__cta--${plan.color}`"
+                    @click="scrollToSection('cotizar')"
                 >
                     Quiero cotizar mi {{ plan.name }}
                 </button>
@@ -64,6 +65,21 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+
+const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+
+    if (element) {
+        const navbarHeight = 70;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navbarHeight;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+};
 
 const visibleCards = ref([false, false, false]);
 const cardRefs = ref([]);

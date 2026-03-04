@@ -12,9 +12,9 @@
             <div class="footer-section links-section" data-aos="fade-up" data-aos-delay="200">
                 <h3 class="footer-title">Enlaces rápidos</h3>
                 <ul class="footer-links">
-                    <li><a href="#planes">Planes y coberturas</a></li>
+                    <li><a href="#coberturas">Planes y coberturas</a></li>
                     <li><a href="#beneficios">Beneficios</a></li>
-                    <li><a href="#elegir">Cómo elegir</a></li>
+                    <li><a href="#como-elegir">Opiniones</a></li>
                 </ul>
             </div>
 

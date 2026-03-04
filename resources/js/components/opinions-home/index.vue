@@ -83,7 +83,7 @@ const opinions = [
         city: 'Monterrey',
         plan: 'Plan Básico',
         price: '$1,459/mes',
-        photo: '/img/clients/client1.jpg'
+        photo: 'https://randomuser.me/api/portraits/men/32.jpg'
     },
     {
         color: 'orange',
@@ -94,7 +94,7 @@ const opinions = [
         city: 'CDMX',
         plan: 'Plan Esencial',
         price: '$1,736/mes',
-        photo: '/img/clients/client2.jpg'
+        photo: 'https://randomuser.me/api/portraits/women/44.jpg'
     },
     {
         color: 'purple',
@@ -105,7 +105,7 @@ const opinions = [
         city: 'Guadalajara',
         plan: 'Plan Amplio',
         price: '$2,703/mes',
-        photo: '/img/clients/client3.jpg'
+        photo: 'https://randomuser.me/api/portraits/men/51.jpg'
     }
 ];
 

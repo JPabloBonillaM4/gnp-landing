@@ -1,5 +1,5 @@
 <script setup>
-const phoneNumber = '5578980149';
+const phoneNumber = '525611090653';
 const whatsappUrl = `https://wa.me/52${phoneNumber}?text=Hola,%20me%20gustaría%20obtener%20más%20información`;
 
 const openWhatsApp = () => {

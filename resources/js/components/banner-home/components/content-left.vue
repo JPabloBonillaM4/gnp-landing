@@ -42,7 +42,6 @@
 
         <!-- Trust Badges -->
         <div class="trust-badges">
-            <span class="trust-badge">Certificado CONDUSEF</span>
             <span class="trust-badge">#1 en siniestros pagados</span>
         </div>
     </div>
