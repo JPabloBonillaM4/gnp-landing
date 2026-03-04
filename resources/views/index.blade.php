@@ -7,7 +7,7 @@
         <title>Seguro Gastos Médicos Mayores GNP | Cotiza Ahora</title>
 
         <!-- SEO Meta Tags -->
-        <meta name="description" content="Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía. Planes desde $1,459/mes. ¡Cotiza ahora y obtén cobertura inmediata!">
+        <meta name="description" content="Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía. ¡Cotiza ahora y obtén cobertura inmediata!">
         <meta name="keywords" content="seguro gastos médicos mayores, GNP seguros, protege tu salud, protege tu economía, seguro médico México, hospitales GNP, cero deducible accidente, cobertura médica, planes de salud, cotizar seguro médico">
         <meta name="author" content="Agente GNP">
         <meta name="robots" content="index, follow">
@@ -19,7 +19,7 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ config('app.url') }}">
         <meta property="og:title" content="Seguro Gastos Médicos Mayores GNP | Cotiza Ahora">
-        <meta property="og:description" content="Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía. Planes desde $1,459/mes.">
+        <meta property="og:description" content="Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía.">
         <meta property="og:image" content="{{ config('app.url') }}/img/logo.png">
         <meta property="og:locale" content="es_MX">
         <meta property="og:site_name" content="Agente de Seguros GNP">
@@ -27,7 +27,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Seguro Gastos Médicos Mayores GNP | Cotiza Ahora">
-        <meta name="twitter:description" content="Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía. Planes desde $1,459/mes.">
+        <meta name="twitter:description" content="Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía.">
         <meta name="twitter:image" content="{{ config('app.url') }}/img/logo.png">
 
         <!-- Favicon -->
@@ -42,7 +42,7 @@
             'name' => 'Seguros de Gastos Médicos Mayores GNP',
             'url' => config('app.url'),
             'logo' => config('app.url') . '/img/logo.png',
-            'description' => 'Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía con planes desde $1,459/mes. Cobertura inmediata.',
+            'description' => 'Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía con Cobertura inmediata.',
             'areaServed' => [
                 '@type' => 'Country',
                 'name' => 'México',
