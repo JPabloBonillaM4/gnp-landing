@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Seguros de Gastos Médicos Mayores GNP | Protege tu Salud y Economía</title>
+        <title>Seguro Gastos Médicos Mayores GNP | Cotiza Ahora</title>
 
         <!-- SEO Meta Tags -->
-        <meta name="description" content="Protege tu salud y economía con Seguros de Gastos Médicos Mayores GNP. Acceso a la mejor red de hospitales, cero deducible por accidente y cobertura inmediata. ¡Cotiza ahora!">
+        <meta name="description" content="Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía. Planes desde $1,459/mes. ¡Cotiza ahora y obtén cobertura inmediata!">
         <meta name="keywords" content="seguro gastos médicos mayores, GNP seguros, protege tu salud, protege tu economía, seguro médico México, hospitales GNP, cero deducible accidente, cobertura médica, planes de salud, cotizar seguro médico">
         <meta name="author" content="Agente GNP">
         <meta name="robots" content="index, follow">
@@ -18,16 +18,16 @@
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ config('app.url') }}">
-        <meta property="og:title" content="Seguros de Gastos Médicos Mayores GNP | Protege tu Salud y Economía">
-        <meta property="og:description" content="Protege tu salud y economía con Seguros de Gastos Médicos Mayores GNP. Acceso a la mejor red de hospitales, cero deducible por accidente y cobertura inmediata.">
+        <meta property="og:title" content="Seguro Gastos Médicos Mayores GNP | Cotiza Ahora">
+        <meta property="og:description" content="Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía. Planes desde $1,459/mes.">
         <meta property="og:image" content="{{ config('app.url') }}/img/logo.png">
         <meta property="og:locale" content="es_MX">
         <meta property="og:site_name" content="Agente de Seguros GNP">
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Seguros de Gastos Médicos Mayores GNP | Protege tu Salud y Economía">
-        <meta name="twitter:description" content="Protege tu salud y economía con Seguros de Gastos Médicos Mayores GNP. Acceso a la mejor red de hospitales y cobertura inmediata.">
+        <meta name="twitter:title" content="Seguro Gastos Médicos Mayores GNP | Cotiza Ahora">
+        <meta name="twitter:description" content="Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía. Planes desde $1,459/mes.">
         <meta name="twitter:image" content="{{ config('app.url') }}/img/logo.png">
 
         <!-- Favicon -->
@@ -39,15 +39,16 @@
         {!! json_encode([
             '@context' => 'https://schema.org',
             '@type' => 'InsuranceAgency',
-            'name' => 'Agente de Seguros GNP',
+            'name' => 'Seguros de Gastos Médicos Mayores GNP',
             'url' => config('app.url'),
             'logo' => config('app.url') . '/img/logo.png',
-            'description' => 'Agente de Seguros GNP. Te asesoro para encontrar el plan de seguro ideal para ti y tu familia.',
+            'description' => 'Seguro de Gastos Médicos Mayores GNP. Protege tu salud y economía con planes desde $1,459/mes. Cobertura inmediata.',
             'areaServed' => [
                 '@type' => 'Country',
                 'name' => 'México',
             ],
-            'serviceType' => ['Seguros de Vida', 'Seguros de Auto', 'Gastos Médicos Mayores', 'Seguros de Hogar'],
+            'serviceType' => 'Seguro de Gastos Médicos Mayores',
+            'priceRange' => '$1,459 - $2,703 MXN/mes',
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
         </script>
 
@@ -80,6 +81,34 @@
                 <img src="/img/logo.png" alt="GNP Logo" class="loader-logo" />
                 <div class="loader-spinner"></div>
             </div>
+        </div>
+
+        {{-- SEO Content visible for crawlers --}}
+        <div class="seo-static-content">
+            <h1>Protege tu Salud y tu Economía</h1>
+            <p>Un <strong>Seguro de Gastos Médicos Mayores GNP</strong> te brinda la tranquilidad de saber que tú y tu familia estarán protegidos ante cualquier eventualidad médica, sin comprometer tu patrimonio. Protege tu salud y protege tu economía con los mejores planes de seguros médicos en México.</p>
+
+            <h2>Planes de Seguros de Gastos Médicos Mayores</h2>
+            <p>Ofrecemos tres planes diseñados para proteger tu salud y tu economía según tus necesidades. Todos nuestros seguros de gastos médicos mayores incluyen acceso a la mejor red de hospitales, cero deducible por accidente, y cobertura inmediata desde el primer día.</p>
+
+            <h3>Plan Básico - Desde $1,459 al mes</h3>
+            <p>Nuestro Plan Básico de seguro de gastos médicos mayores ofrece protección esencial con suma asegurada de $15,900,000 pesos, acceso a red limitada de hospitales, deducible desde $15,500, coaseguro del 5% al 20%, y membresía Médica Móvil incluida. Ideal para proteger tu salud sin afectar tu economía.</p>
+
+            <h3>Plan Esencial - Desde $1,736 al mes</h3>
+            <p>El Plan Esencial amplía tu protección con suma asegurada de $37,100,000 pesos, acceso a red amplia de hospitales en todo México, cero deducible por accidente, cobertura en viajes, y consultas por videollamada. Protege tu salud y economía con mayor cobertura.</p>
+
+            <h3>Plan Amplio - Desde $2,703 al mes</h3>
+            <p>El Plan Amplio es nuestra cobertura más completa para proteger tu salud y economía. Incluye suma asegurada de $37,100,000 pesos, red amplia de hospitales, emergencias en el extranjero, medicina de vanguardia y alta tecnología médica. La mejor inversión para proteger tu salud.</p>
+
+            <h2>Beneficios que Protegen tu Salud y Economía</h2>
+            <p>Con GNP proteges tu salud con los mejores beneficios del mercado. Nuestro seguro de gastos médicos mayores incluye acceso a más de 3,000 hospitales, asistencia dental con Dentalia, médico a domicilio con costo preferente, consultas por videollamada gratis, asistencia psicológica (2 consultas gratis al mes), libre elección de médicos, y cero deducible por accidente. Protege tu economía evitando gastos médicos imprevistos.</p>
+
+            <h2>¿Por Qué Elegir Gastos Médicos Mayores GNP?</h2>
+            <p>GNP es la aseguradora #1 en pago de siniestros en México, con más de 115 años protegiendo la salud y economía de las familias mexicanas. Nuestros seguros de gastos médicos mayores te permiten proteger tu salud con la mejor red médica del país y proteger tu economía con planes accesibles. Cotiza hoy y obtén cobertura inmediata.</p>
+
+            <p>Un imprevisto médico no debería poner en riesgo tu patrimonio. Con un seguro de gastos médicos mayores de GNP, proteges tu salud ante hospitalización, cirugías, emergencias y tratamientos especializados, y proteges tu economía familiar evitando deudas por gastos médicos. La inversión mensual en tu seguro es mínima comparada con el respaldo financiero y médico que recibes.</p>
+
+            <p>Elige entre nuestros tres planes de seguros de gastos médicos mayores: Plan Básico (ideal para protección esencial), Plan Esencial (cobertura amplia a buen precio), o Plan Amplio (máxima protección internacional). Todos diseñados para proteger tu salud y economía. Cotiza ahora y comienza a proteger tu salud hoy mismo.</p>
         </div>
 
         <div id="app">
@@ -132,6 +161,17 @@
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/js/app.js'])
         @endif
+
+        <style>
+            /* Hide SEO static content - visible for crawlers but hidden for users */
+            .seo-static-content {
+                position: absolute;
+                left: -9999px;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+            }
+        </style>
 
         <script>
             window.addEventListener('load', function () {

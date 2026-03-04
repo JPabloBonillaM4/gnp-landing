@@ -1,4 +1,5 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: http://seguros.audireaudiologia.com/sitemap.xml
+# Sitemap URL - Update with your domain
+Sitemap: /sitemap.xml
