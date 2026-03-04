@@ -40,7 +40,7 @@
                 <a href="tel:+525611090653" class="contact-btn contact-btn--phone">
                     Teléfono
                 </a>
-                <a href="https://wa.me/5611090653" target="_blank" class="contact-btn contact-btn--whatsapp">
+                <a href="https://wa.me/525611090653" target="_blank" class="contact-btn contact-btn--whatsapp">
                     WhatsApp
                 </a>
             </div>
