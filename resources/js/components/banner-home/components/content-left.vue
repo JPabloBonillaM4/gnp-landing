@@ -19,6 +19,8 @@
         <p class="subtitle fs-20px text-justify">
             Un <strong>Seguro de Gastos Médicos Mayores</strong> que se adapta a ti, con
             el respaldo de <strong>GNP</strong> y acceso a la red médica más sólida del país.
+            <!-- <strong>Protege tu salud</strong> ante cualquier eventualidad y <strong>protege tu economía</strong>
+            familiar evitando gastos médicos imprevistos que pueden afectar tu patrimonio. -->
         </p>
 
         <!-- Benefits Grid -->

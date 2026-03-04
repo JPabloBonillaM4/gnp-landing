@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Agente de Seguros GNP | Protección para Ti y tu Familia</title>
+        <title>Seguros de Gastos Médicos Mayores GNP | Protege tu Salud y Economía</title>
 
         <!-- SEO Meta Tags -->
-        <meta name="description" content="Soy tu Agente de Seguros GNP. Te asesoro para encontrar el plan de seguro ideal para ti y tu familia. Cotiza seguros de vida, auto, gastos médicos y más.">
-        <meta name="keywords" content="agente GNP, seguros GNP, seguro de vida, seguro de auto, gastos médicos mayores, cotizar seguro, agente de seguros, GNP seguros">
+        <meta name="description" content="Protege tu salud y economía con Seguros de Gastos Médicos Mayores GNP. Acceso a la mejor red de hospitales, cero deducible por accidente y cobertura inmediata. ¡Cotiza ahora!">
+        <meta name="keywords" content="seguro gastos médicos mayores, GNP seguros, protege tu salud, protege tu economía, seguro médico México, hospitales GNP, cero deducible accidente, cobertura médica, planes de salud, cotizar seguro médico">
         <meta name="author" content="Agente GNP">
         <meta name="robots" content="index, follow">
 
@@ -18,16 +18,16 @@
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ config('app.url') }}">
-        <meta property="og:title" content="Agente de Seguros GNP | Protección para Ti y tu Familia">
-        <meta property="og:description" content="Soy tu Agente de Seguros GNP. Te asesoro para encontrar el plan de seguro ideal para ti y tu familia. Cotiza seguros de vida, auto, gastos médicos y más.">
+        <meta property="og:title" content="Seguros de Gastos Médicos Mayores GNP | Protege tu Salud y Economía">
+        <meta property="og:description" content="Protege tu salud y economía con Seguros de Gastos Médicos Mayores GNP. Acceso a la mejor red de hospitales, cero deducible por accidente y cobertura inmediata.">
         <meta property="og:image" content="{{ config('app.url') }}/img/logo.png">
         <meta property="og:locale" content="es_MX">
         <meta property="og:site_name" content="Agente de Seguros GNP">
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Agente de Seguros GNP | Protección para Ti y tu Familia">
-        <meta name="twitter:description" content="Soy tu Agente de Seguros GNP. Te asesoro para encontrar el plan de seguro ideal para ti y tu familia.">
+        <meta name="twitter:title" content="Seguros de Gastos Médicos Mayores GNP | Protege tu Salud y Economía">
+        <meta name="twitter:description" content="Protege tu salud y economía con Seguros de Gastos Médicos Mayores GNP. Acceso a la mejor red de hospitales y cobertura inmediata.">
         <meta name="twitter:image" content="{{ config('app.url') }}/img/logo.png">
 
         <!-- Favicon -->
@@ -95,6 +95,8 @@
             <opinions-home></opinions-home>
             {{-- Certifications --}}
             <certifications-home></certifications-home>
+            {{-- SEO Content --}}
+            <seo-content></seo-content>
             {{-- Footer --}}
             <footer-component></footer-component>
             {{-- Whatssapp --}}
@@ -104,16 +106,27 @@
         {{-- SEO: Fallback para bots que no ejecutan JavaScript --}}
         <noscript>
             <div style="max-width: 800px; margin: 2rem auto; padding: 1rem; font-family: sans-serif;">
-                <h1>Agente de Seguros GNP</h1>
-                <p>Soy tu Agente de Seguros GNP. Te asesoro para encontrar el plan de seguro ideal para ti y tu familia.</p>
-                <h2>Nuestros Planes de Seguros</h2>
+                <h1>Protege tu Salud y tu Economía con GNP</h1>
+                <p>Un Seguro de Gastos Médicos Mayores que se adapta a ti, con el respaldo de GNP y acceso a la red médica más sólida del país.</p>
+                <h2>Planes de Seguros de Gastos Médicos Mayores</h2>
+                <h3>Plan Básico desde $1,459/mes</h3>
+                <p>Red limitada de hospitales, suma asegurada de $15,900,000, cero deducible por accidente.</p>
+                <h3>Plan Esencial desde $1,736/mes</h3>
+                <p>Red amplia de hospitales, suma asegurada de $37,100,000, cobertura en viajes.</p>
+                <h3>Plan Amplio desde $2,703/mes</h3>
+                <p>Red amplia de hospitales, emergencia en el extranjero, medicina de vanguardia.</p>
+                <h2>Beneficios que realmente importan</h2>
                 <ul>
-                    <li>Seguros de Vida</li>
-                    <li>Seguros de Auto</li>
-                    <li>Gastos Médicos Mayores</li>
-                    <li>Seguros de Hogar</li>
+                    <li>Acceso a la mejor red de hospitales</li>
+                    <li>Asistencia dental con Dentalia</li>
+                    <li>Libre elección de médicos</li>
+                    <li>Médico a domicilio con costo preferente</li>
+                    <li>Cero deducible por accidente</li>
+                    <li>Consulta videollamada gratis</li>
+                    <li>Asistencia Psicológica - 2 consultas gratis al mes</li>
+                    <li>Alta tecnología</li>
                 </ul>
-                <p>Contáctanos para una cotización personalizada.</p>
+                <p>Cotiza hoy y obtén cobertura inmediata para proteger tu salud y tu economía.</p>
             </div>
         </noscript>
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))

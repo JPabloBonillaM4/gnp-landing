@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import navbarComponent from '../components/general/navbar.vue';
 import footerComponent from '../components/general/footer.vue';
 import whatsappContact from '../components/general/whatssapp_contact.vue';
+import seoContent from '../components/general/seo-content.vue';
 import bannerHome from '../components/banner-home/index.vue';
 import plansHome from '../components/plans-home/index.vue';
 import benefitsHome from '../components/benefits-home/index.vue';
@@ -13,6 +14,7 @@ const app = createApp({
         'navbar-component': navbarComponent,
         'footer-component': footerComponent,
         'whatsapp-contact': whatsappContact,
+        'seo-content': seoContent,
         'banner-home': bannerHome,
         'plans-home': plansHome,
         'benefits-home': benefitsHome,
