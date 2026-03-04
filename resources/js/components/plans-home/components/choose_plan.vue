@@ -35,7 +35,7 @@
             <!-- CTA Section -->
             <div class="choose-plan__cta-section">
                 <p class="choose-plan__cta-text text-blue-primary">¿Quieres saber tu precio personalizado?</p>
-                <button class="choose-plan__cta-btn">
+                <button class="choose-plan__cta-btn" @click="scrollToSection('cotizar')">
                     ¡Da clic aquí y ponte en contacto ahora!
                 </button>
             </div>
@@ -49,6 +49,21 @@ import { ref, onMounted, onUnmounted } from 'vue';
 const isVisible = ref(false);
 const sectionRef = ref(null);
 let observer = null;
+
+const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+
+    if (element) {
+        const navbarHeight = 70;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navbarHeight;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+};
 
 onMounted(() => {
     observer = new IntersectionObserver(
