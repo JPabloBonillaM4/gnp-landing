@@ -30,16 +30,16 @@
             />
         </div>
 
-        <!-- Teléfono -->
+        <!-- Móvil -->
         <div class="form-group">
-            <label class="form-label" for="telefono">Teléfono</label>
+            <label class="form-label" for="movil">Móvil</label>
             <input
-                id="telefono"
+                id="movil"
                 type="tel"
                 class="form-input"
                 placeholder="Ej. 5512345678"
-                :value="formData.telefono"
-                @input="$emit('update', 'telefono', $event.target.value)"
+                :value="formData.movil"
+                @input="$emit('update', 'movil', $event.target.value)"
                 maxlength="30"
                 required
             />

@@ -37,7 +37,7 @@
         <div class="contact-section">
             <p class="contact-title">Deseo contratar:</p>
             <div class="contact-buttons">
-                <a href="https://wa.me/525611090653" target="_blank" class="contact-btn contact-btn--whatsapp">
+                <a href="https://wa.me/525558870510" target="_blank" class="contact-btn contact-btn--whatsapp">
                     WhatsApp
                 </a>
             </div>

@@ -75,7 +75,7 @@ let observer = null;
 const formData = reactive({
     firstName: '',
     lastName: '',
-    telefono: '',
+    movil: '',
     email: '',
     edad: '',
     codigoPostal: '',
@@ -115,7 +115,7 @@ const submitForm = async () => {
         // Campos del formulario
         formPayload.append('First Name', formData.firstName);
         formPayload.append('Last Name', formData.lastName);
-        formPayload.append('Phone', formData.telefono);
+        formPayload.append('Mobile', formData.movil);
         formPayload.append('Email', formData.email);
         formPayload.append('LEADCF51', formData.edad);
         formPayload.append('Zip Code', formData.codigoPostal);
