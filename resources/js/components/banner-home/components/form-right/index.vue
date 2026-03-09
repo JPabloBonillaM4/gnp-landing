@@ -102,7 +102,21 @@ const submitForm = async () => {
     isLoading.value = true;
 
     try {
-        // Crear FormData para enviar a Zoho CRM
+        // 1. Enviar a Laravel (correo electrónico)
+        try {
+            await axios.post('/submit-form', {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            movil: formData.movil,
+            email: formData.email,
+            edad: formData.edad,
+            codigoPostal: formData.codigoPostal
+        });
+        } catch (error) {
+            console.error('Error al enviar a Laravel:', error);
+        }
+
+        // 2. Crear FormData para enviar a Zoho CRM
         const formPayload = new FormData();
 
         // Campos ocultos requeridos por Zoho
@@ -127,8 +141,8 @@ const submitForm = async () => {
         // Honeypot para prevenir spam
         formPayload.append('aG9uZXlwb3Q', '');
 
-        // Enviar a Zoho CRM
-        const response = await fetch('https://crm.zoho.com/crm/WebToLeadForm', {
+        // 3. Enviar a Zoho CRM
+        const zohoResponse = await fetch('https://crm.zoho.com/crm/WebToLeadForm', {
             method: 'POST',
             body: formPayload,
             mode: 'no-cors' // Zoho no permite CORS, pero el form se enviará

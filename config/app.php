@@ -56,6 +56,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Email Destination
+    |--------------------------------------------------------------------------
+    |
+    | This email address will be used as the destination for form submissions
+    | and contact notifications. You can set this in your ".env" file.
+    |
+    */
+
+    'correo_destino' => env('CORREO_DESTINO', 'ventas@gnpgastosmedicos.com.mx'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
     |
