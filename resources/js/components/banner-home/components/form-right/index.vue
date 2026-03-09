@@ -129,10 +129,11 @@ const submitForm = async () => {
         // Campos del formulario
         formPayload.append('First Name', formData.firstName);
         formPayload.append('Last Name', formData.lastName);
-        formPayload.append('Mobile', formData.movil);
+        formPayload.append('Phone', formData.movil); // Teléfono (se envía el mismo valor que móvil)
+        formPayload.append('Mobile', formData.movil); // Móvil
         formPayload.append('Email', formData.email);
-        formPayload.append('LEADCF51', formData.edad);
-        formPayload.append('Zip Code', formData.codigoPostal);
+        formPayload.append('LEADCF51', formData.edad); // Edad
+        formPayload.append('Zip Code', formData.codigoPostal); // Código postal
 
         // Campos predeterminados
         formPayload.append('Lead Source', 'Web');

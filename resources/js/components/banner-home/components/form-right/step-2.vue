@@ -1,6 +1,6 @@
 <template>
     <form class="step-form" @submit.prevent="handleSubmit">
-        <!-- Edad -->
+        <!-- Edad (Zoho: LEADCF51) -->
         <div class="form-group">
             <label class="form-label" for="edad">Edad</label>
             <input
@@ -15,7 +15,7 @@
             />
         </div>
 
-        <!-- Código Postal -->
+        <!-- Código Postal (Zoho: Zip Code) -->
         <div class="form-group">
             <label class="form-label" for="codigoPostal">Código Postal</label>
             <input

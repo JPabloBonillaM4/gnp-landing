@@ -1,6 +1,6 @@
 <template>
     <form class="step-form" @submit.prevent="handleSubmit">
-        <!-- Nombre -->
+        <!-- Nombre (Zoho: First Name) -->
         <div class="form-group">
             <label class="form-label" for="firstName">Nombre</label>
             <input
@@ -15,7 +15,7 @@
             />
         </div>
 
-        <!-- Apellidos -->
+        <!-- Apellidos (Zoho: Last Name) - Campo obligatorio -->
         <div class="form-group">
             <label class="form-label" for="lastName">Apellidos <span style="color:red;">*</span></label>
             <input
@@ -30,22 +30,24 @@
             />
         </div>
 
-        <!-- Móvil -->
+        <!-- Móvil (Zoho: Mobile y Phone - se envía a ambos campos) -->
         <div class="form-group">
-            <label class="form-label" for="movil">Móvil</label>
+            <label class="form-label" for="movil">Teléfono</label>
             <input
                 id="movil"
                 type="tel"
                 class="form-input"
                 placeholder="Ej. 5512345678"
                 :value="formData.movil"
-                @input="$emit('update', 'movil', $event.target.value)"
-                maxlength="30"
+                @input="handlePhoneInput"
+                pattern="[0-9]*"
+                inputmode="numeric"
+                maxlength="15"
                 required
             />
         </div>
 
-        <!-- Correo electrónico -->
+        <!-- Correo electrónico (Zoho: Email) -->
         <div class="form-group">
             <label class="form-label" for="email">Correo electrónico</label>
             <input
@@ -54,7 +56,8 @@
                 class="form-input"
                 placeholder="Ej. juan@ejemplo.com"
                 :value="formData.email"
-                @input="$emit('update', 'email', $event.target.value)"
+                @input="handleEmailInput"
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                 maxlength="100"
                 required
             />
@@ -76,6 +79,18 @@ defineProps({
 });
 
 const emit = defineEmits(['update', 'next']);
+
+const handlePhoneInput = (event) => {
+    // Filtrar solo números del valor ingresado
+    const value = event.target.value.replace(/\D/g, '');
+    emit('update', 'movil', value);
+};
+
+const handleEmailInput = (event) => {
+    // Convertir a minúsculas y eliminar espacios
+    const value = event.target.value.toLowerCase().trim();
+    emit('update', 'email', value);
+};
 
 const handleSubmit = () => {
     emit('next');
