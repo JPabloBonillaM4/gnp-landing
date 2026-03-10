@@ -30,9 +30,9 @@
             />
         </div>
 
-        <!-- Móvil (Zoho: Mobile y Phone - se envía a ambos campos) -->
+        <!-- Móvil (Zoho: Mobile) -->
         <div class="form-group">
-            <label class="form-label" for="movil">Teléfono</label>
+            <label class="form-label" for="movil">Móvil</label>
             <input
                 id="movil"
                 type="tel"
