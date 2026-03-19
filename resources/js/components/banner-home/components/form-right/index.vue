@@ -1,37 +1,14 @@
 <template>
     <div class="form-container" :class="{ 'form-container--visible': isVisible }" ref="formRef">
         <h2 class="form-title text-blue-primary" v-if="!showSuccess">Obtén tu cotización gratuita</h2>
-        <!-- Stepper Header -->
-        <div class="stepper" v-if="!showSuccess">
-            <p class="stepper__label fs-20px">
-                Paso {{ currentStep }} de 2: {{ currentStep === 1 ? 'Datos de contacto' : 'Información adicional' }}
-            </p>
-            <div class="stepper__progress">
-                <div
-                    class="stepper__progress-bar"
-                    :class="{ 'stepper__progress-bar--active': currentStep >= 1 }"
-                ></div>
-                <div
-                    class="stepper__progress-bar"
-                    :class="{ 'stepper__progress-bar--active': currentStep >= 2 }"
-                ></div>
-            </div>
-        </div>
 
         <!-- Form Steps -->
         <div class="form-steps">
             <Transition name="slide-fade" mode="out-in">
                 <Step1
-                    v-if="currentStep === 1 && !isLoading && !showSuccess"
+                    v-if="!isLoading && !showSuccess"
                     :form-data="formData"
                     @update="updateFormData"
-                    @next="nextStep"
-                />
-                <Step2
-                    v-else-if="currentStep === 2 && !isLoading && !showSuccess"
-                    :form-data="formData"
-                    @update="updateFormData"
-                    @back="prevStep"
                     @submit="submitForm"
                 />
                 <div v-else-if="isLoading" class="loader-container">
@@ -62,11 +39,9 @@
 <script setup>
 import { ref, reactive, onMounted, onUnmounted } from 'vue';
 import Step1 from './step-1.vue';
-import Step2 from './step-2.vue';
 import SuccessMsg from './success_msg.vue';
 
 const isVisible = ref(false);
-const currentStep = ref(1);
 const formRef = ref(null);
 const isLoading = ref(false);
 const showSuccess = ref(false);
@@ -78,23 +53,10 @@ const formData = reactive({
     movil: '',
     email: '',
     edad: '',
-    codigoPostal: '',
 });
 
 const updateFormData = (field, value) => {
     formData[field] = value;
-};
-
-const nextStep = () => {
-    if (currentStep.value < 2) {
-        currentStep.value++;
-    }
-};
-
-const prevStep = () => {
-    if (currentStep.value > 1) {
-        currentStep.value--;
-    }
 };
 
 const submitForm = async () => {
@@ -109,8 +71,7 @@ const submitForm = async () => {
             lastName: formData.lastName,
             movil: formData.movil,
             email: formData.email,
-            edad: formData.edad,
-            codigoPostal: formData.codigoPostal
+            edad: formData.edad
         });
         } catch (error) {
             console.error('Error al enviar a Laravel:', error);
@@ -132,7 +93,6 @@ const submitForm = async () => {
         formPayload.append('Mobile', formData.movil);
         formPayload.append('Email', formData.email);
         formPayload.append('LEADCF51', formData.edad);
-        formPayload.append('Zip Code', formData.codigoPostal);
 
         // Campos predeterminados
         formPayload.append('Lead Source', 'Web');
@@ -206,33 +166,6 @@ onUnmounted(() => {
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 1rem;
-}
-
-/* Stepper */
-.stepper {
-    margin-bottom: 1.5rem;
-}
-
-.stepper__label {
-    margin-bottom: 0.5rem;
-}
-
-.stepper__progress {
-    display: flex;
-    gap: 0.5rem;
-    height: 8px;
-}
-
-.stepper__progress-bar {
-    flex: 1;
-    height: 100%;
-    background-color: #e5e5e5;
-    border-radius: 4px;
-    transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.stepper__progress-bar--active {
-    background-color: var(--orange-primary);
 }
 
 /* Form Steps Container */

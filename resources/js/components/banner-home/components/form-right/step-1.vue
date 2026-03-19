@@ -2,7 +2,7 @@
     <form class="step-form" @submit.prevent="handleSubmit">
         <!-- Nombre (Zoho: First Name) -->
         <div class="form-group">
-            <label class="form-label" for="firstName">Nombre</label>
+            <label class="form-label" for="firstName">Nombre <span style="color:red;">*</span></label>
             <input
                 id="firstName"
                 type="text"
@@ -32,7 +32,7 @@
 
         <!-- Móvil (Zoho: Mobile) -->
         <div class="form-group">
-            <label class="form-label" for="movil">Móvil</label>
+            <label class="form-label" for="movil">Móvil <span style="color:red;">*</span></label>
             <input
                 id="movil"
                 type="tel"
@@ -49,7 +49,7 @@
 
         <!-- Correo electrónico (Zoho: Email) -->
         <div class="form-group">
-            <label class="form-label" for="email">Correo electrónico</label>
+            <label class="form-label" for="email">Correo electrónico <span style="color:red;">*</span></label>
             <input
                 id="email"
                 type="email"
@@ -59,6 +59,21 @@
                 @input="handleEmailInput"
                 pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                 maxlength="100"
+                required
+            />
+        </div>
+
+        <!-- Edad (Zoho: LEADCF51) -->
+        <div class="form-group">
+            <label class="form-label" for="edad">Edad <span style="color:red;">*</span></label>
+            <input
+                id="edad"
+                type="text"
+                class="form-input"
+                placeholder="Ej. 35"
+                :value="formData.edad"
+                @input="$emit('update', 'edad', $event.target.value)"
+                maxlength="9"
                 required
             />
         </div>
@@ -78,7 +93,7 @@ defineProps({
     }
 });
 
-const emit = defineEmits(['update', 'next']);
+const emit = defineEmits(['update', 'submit']);
 
 const handlePhoneInput = (event) => {
     // Filtrar solo números del valor ingresado
@@ -93,6 +108,6 @@ const handleEmailInput = (event) => {
 };
 
 const handleSubmit = () => {
-    emit('next');
+    emit('submit');
 };
 </script>

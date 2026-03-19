@@ -27,8 +27,7 @@ class GeneralController extends Controller
             'lastName' => 'required|string|max:255',
             'movil' => 'required|string|max:20',
             'email' => 'required|email|max:255',
-            'edad' => 'required|string|max:3',
-            'codigoPostal' => 'required|string|max:10',
+            'edad' => 'required|string|max:3'
         ]);
 
         try {
@@ -37,8 +36,7 @@ class GeneralController extends Controller
             $email = $validated['email'];
             $telefono = $validated['movil'];
             $edad = $validated['edad'];
-            $codigoPostal = $validated['codigoPostal'];
-
+            $codigoPostal = $validated['codigoPostal'] ?? '000000';
             // Configurar PHPMailer
             $mail = new PHPMailer(true);
 
