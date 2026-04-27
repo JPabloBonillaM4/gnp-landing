@@ -1,6 +1,9 @@
 <script setup>
 const phoneNumber = '5558870510';
-const whatsappUrl = `https://wa.me/52${phoneNumber}?text=Hola,%20me%20gustaría%20obtener%20más%20información`;
+const message = `Hola \u{1F44B}, estoy interesado en cotizar mi seguro de Gastos Médicos Mayores y recibir más información sobre los planes disponibles. \u{1FA7A}
+
+¿Me pueden orientar?`;
+const whatsappUrl = `https://wa.me/52${phoneNumber}?text=${encodeURIComponent(message)}`;
 
 const openWhatsApp = () => {
     window.open(whatsappUrl, '_blank');
