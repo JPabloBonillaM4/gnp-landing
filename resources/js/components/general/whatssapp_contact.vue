@@ -1,5 +1,5 @@
 <script setup>
-const phoneNumber = '5558870510';
+const phoneNumber = '5523452633';
 const message = `Hola \u{1F44B}, estoy interesado en cotizar mi seguro de Gastos Médicos Mayores y recibir más información sobre los planes disponibles. \u{1FA7A}
 
 ¿Me pueden orientar?`;
